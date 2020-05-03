@@ -1,13 +1,22 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-void input();
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
 
-double get_pos_x();
-double get_pos_y();
-void set_pos_x(double x);
-void set_pos_y(double y);
-void change_pos_x(double dx);
-void change_pos_y(double dy);
+
+enum InputEnum
+{
+    NONE,
+    UP_ARROW,
+    DOWN_ARROW,
+    LEFT_ARROW,
+    RIGHT_ARROW,
+};
+
+void input();
+InputEnum get_input();
 
 #endif

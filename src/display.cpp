@@ -1,6 +1,9 @@
 #include "display.h"
 #include "update.h"
 #include "input.h"
+#include "objects.h"
+#include <string>
+#include <ctime>
 
 void ShowConsoleCursor(bool);
 
@@ -61,6 +64,12 @@ void cls()
     SetConsoleCursorPosition(hOut, topLeft);
 }
 
+char get_pixel_on_pos(vector<Object *>, double, double);
+
+int frames = 0;
+int fps = 0;
+int last_time = 0;
+
 void show_screen()
 {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -72,24 +81,41 @@ void show_screen()
 
     string buffer;
 
-    double x = get_pos_x();
-    double y = get_pos_y();
+    auto objects = get_all_objects();
 
     for (int i = 0; i < rows - 1; i++)
     {
-        buffer += '\n';
-        double Y = (y - i) * (y - i);
-
+        double y = 7 * (rows - i);
         for (int j = 0; j < columns - 1; j++)
         {
-            double r = (x - j) * (x - j) + Y;
-            if (r < 3)
-                buffer += "*";
-            else
-            {
-                buffer += ".";
-            }
+            double x = j * 5;
+            char pixel = get_pixel_on_pos(objects, x, y);
+            buffer += pixel;
+        }
+        buffer += '\n';
+    }
+    frames += 1;
+    int t = time(0);
+    if (t - last_time > 0)
+    {
+        fps = frames;
+        frames = 0;
+        last_time = t;
+    }
+    buffer += std::to_string(fps);
+    buffer += "\n";
+    fwrite(buffer.c_str(), buffer.length(), 1, stdout);
+}
+
+char get_pixel_on_pos(vector<Object *> objects, double x, double y)
+{
+    for (auto it = objects.begin(); it != objects.end(); it++)
+    {
+        if ((*it)->is_visible(x, y))
+        {
+            return '*';
         }
     }
-    fwrite(buffer.c_str(), buffer.length(), 1, stdout);
+
+    return ' ';
 }
