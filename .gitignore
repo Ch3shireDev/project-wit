@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+/src/.vs/projekt-wit/v16
+/src/Debug

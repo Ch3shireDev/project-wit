@@ -1,6 +1,3 @@
-#ifndef UPDATE_H
-#define UPDATE_H
+#pragma once
 
 void update();
-
-#endif
