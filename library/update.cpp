@@ -9,7 +9,7 @@ using namespace std::chrono;
 
 int64_t get_time()
 {
-return std::chrono::duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+	return std::chrono::duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
 }
 
 int64_t t0 = get_time();

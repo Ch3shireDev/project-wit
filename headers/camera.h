@@ -9,7 +9,7 @@ public:
 	double camera_scale = 10;
 
 	Object* object;
-	Camera(Object* object, double scale=0.1);
+	Camera(Object* object, double scale = 0.1);
 
 	void update(double dt) override;
 };

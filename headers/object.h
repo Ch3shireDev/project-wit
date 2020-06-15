@@ -16,7 +16,7 @@ struct Vec
 	{
 	}
 
-	Vec(double x, double y) :x(x), y(y)
+	Vec(double x, double y) : x(x), y(y)
 	{
 	}
 };
@@ -40,7 +40,7 @@ public:
 	bool is_static = false;
 
 	int z_index = 0;
-	
+
 	Object(double x = 0, double y = 0)
 	{
 		position.x = x;

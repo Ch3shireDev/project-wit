@@ -13,7 +13,7 @@ int main()
 
 	auto* camera = new Camera(car, 10);
 	auto* speedway = new Speedway(-150, 0, 150, 20);
-	
+
 	while (true)
 	{
 		update();

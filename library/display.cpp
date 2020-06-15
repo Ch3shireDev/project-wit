@@ -41,8 +41,8 @@ void show_screen(Camera* camera, int SCREEN_WIDTH, int SCREEN_HEIGHT)
 	Vec pos = camera->get_position();
 	string buff2;
 
-	double width_unit = 5/camera->camera_scale;
-	double height_unit = 12/camera->camera_scale;
+	double width_unit = 5 / camera->camera_scale;
+	double height_unit = 12 / camera->camera_scale;
 
 
 	for (int i = 0; i < SCREEN_HEIGHT; i++)
@@ -81,7 +81,7 @@ char get_pixel_on_pos(vector<Object*> objects, double x, double y)
 	{
 		if ((*it)->is_pixel_visible(x, y))
 		{
-			return (*it)->get_pixel_type(x,y);
+			return (*it)->get_pixel_type(x, y);
 		}
 	}
 	return ' ';

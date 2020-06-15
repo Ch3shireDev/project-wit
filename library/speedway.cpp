@@ -4,8 +4,8 @@
 
 double Speedway::get_r2(double x, double y)
 {
-	double dx = x -position.x;
-	double dy = y -position.y;
+	double dx = x - position.x;
+	double dy = y - position.y;
 	return dx * dx + dy * dy;
 }
 
@@ -28,9 +28,9 @@ char Speedway::get_pixel_type(double x, double y)
 	return '-';
 }
 
-Speedway::Speedway(double x0, double y0, double r1, double dr2): Object(0,0)
+Speedway::Speedway(double x0, double y0, double r1, double dr2): Object(0, 0)
 {
-	this->position = Vec(x0,y0);
+	this->position = Vec(x0, y0);
 	this->r1 = r1;
-	this->r2 = r1+dr2;
+	this->r2 = r1 + dr2;
 }

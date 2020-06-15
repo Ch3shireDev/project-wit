@@ -4,7 +4,7 @@
 class Car : public Object
 {
 public:
-	Car(double x, double y, double width=3, double height=5);
+	Car(double x, double y, double width = 3, double height = 5);
 	void update(double dt) override;
-	char get_pixel_type(double x, double y) { return '*'; }
+	char get_pixel_type(double x, double y) override { return '*'; }
 };

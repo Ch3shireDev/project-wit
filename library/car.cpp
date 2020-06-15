@@ -17,7 +17,7 @@ double velocity = 0;
 void Car::update(double dt)
 {
 	double acceleration = 0;
-	
+
 	if (get_input(InputEnum::UP_ARROW))
 	{
 		acceleration = 150;

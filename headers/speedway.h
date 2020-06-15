@@ -1,8 +1,8 @@
 #pragma once
 #include "object.h"
 
-class Speedway : public Object {
-
+class Speedway : public Object
+{
 	double get_r2(double x, double y);
 	double get_r(double x, double y);
 public:
