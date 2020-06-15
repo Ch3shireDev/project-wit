@@ -5,15 +5,17 @@
 #include <iostream>
 #include <windows.h>
 
+#include "camera.h"
+
 using namespace std;
 
 void ShowConsoleCursor(bool);
-void show_screen(Object* camera, int = 120, int = 30);
+void show_screen(Camera* camera, int = 120, int = 30);
 
-void show(Object* player)
+void show(Camera* camera)
 {
 	ShowConsoleCursor(false);
-	show_screen(player);
+	show_screen(camera);
 }
 
 void ShowConsoleCursor(bool showFlag)
@@ -31,7 +33,7 @@ int frames = 0;
 int fps = 0;
 int last_time = 0;
 
-void show_screen(Object* camera, int SCREEN_WIDTH, int SCREEN_HEIGHT)
+void show_screen(Camera* camera, int SCREEN_WIDTH, int SCREEN_HEIGHT)
 {
 	ios_base::sync_with_stdio(false);
 	auto objects = get_all_objects();
@@ -39,12 +41,16 @@ void show_screen(Object* camera, int SCREEN_WIDTH, int SCREEN_HEIGHT)
 	Vec pos = camera->get_position();
 	string buff2;
 
+	double width_unit = 5/camera->camera_scale;
+	double height_unit = 12/camera->camera_scale;
+
+
 	for (int i = 0; i < SCREEN_HEIGHT; i++)
 	{
-		double y = pos.y + 8 * (SCREEN_HEIGHT - i) - 4 * SCREEN_HEIGHT;
+		double y = pos.y + height_unit * (SCREEN_HEIGHT - i) - height_unit * SCREEN_HEIGHT / 2;
 		for (int j = 0; j < SCREEN_WIDTH; j++)
 		{
-			double x = pos.x + j * 5 - 5 * SCREEN_WIDTH / 2;
+			double x = pos.x + j * width_unit - width_unit * SCREEN_WIDTH / 2;
 			buff2 += get_pixel_on_pos(objects, x, y);
 		}
 		buff2 += '\n';
@@ -75,7 +81,7 @@ char get_pixel_on_pos(vector<Object*> objects, double x, double y)
 	{
 		if ((*it)->is_pixel_visible(x, y))
 		{
-			return '*';
+			return (*it)->get_pixel_type(x,y);
 		}
 	}
 	return ' ';

@@ -19,21 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="car.cpp" />
-    <ClCompile Include="display.cpp" />
-    <ClCompile Include="input.cpp" />
+    <ClCompile Include="library\camera.cpp" />
+    <ClCompile Include="library\car.cpp" />
+    <ClCompile Include="library\display.cpp" />
+    <ClCompile Include="library\input.cpp" />
+    <ClCompile Include="library\object.cpp" />
+    <ClCompile Include="library\speedway.cpp" />
+    <ClCompile Include="library\update.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="object.cpp" />
-    <ClCompile Include="update.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="car.h" />
-    <ClInclude Include="display.h" />
-    <ClInclude Include="input.h" />
-    <ClInclude Include="object.h" />
-    <ClInclude Include="update.h" />
+    <ClInclude Include="headers\camera.h" />
+    <ClInclude Include="headers\car.h" />
+    <ClInclude Include="headers\display.h" />
+    <ClInclude Include="headers\input.h" />
+    <ClInclude Include="headers\object.h" />
+    <ClInclude Include="headers\speedway.h" />
+    <ClInclude Include="headers\update.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -123,6 +125,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>./headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

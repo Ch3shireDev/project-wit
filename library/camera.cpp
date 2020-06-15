@@ -1,4 +1,5 @@
 #include "camera.h"
+
 #include <cmath>
 
 void Camera::update(double dt)
@@ -18,8 +19,9 @@ void Camera::update(double dt)
 	}
 }
 
-Camera::Camera(Object* object)
+Camera::Camera(Object* object, double scale)
 {
+	this->camera_scale = scale;
 	this->object = object;
 	is_visible = false;
 }

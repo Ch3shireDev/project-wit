@@ -9,14 +9,14 @@ std::vector<Object*>& get_all_objects();
 
 struct Vec
 {
-	double x;
-	double y;
+	double x = 0;
+	double y = 0;
 
 	Vec()
 	{
 	}
 
-	Vec(double x, double y)
+	Vec(double x, double y) :x(x), y(y)
 	{
 	}
 };
@@ -33,12 +33,14 @@ protected:
 public:
 	double rotation = 0;
 
-	double width = 20;
-	double length = 40;
+	double width = 2;
+	double height = 4;
 
 	bool is_visible = true;
 	bool is_static = false;
 
+	int z_index = 0;
+	
 	Object(double x = 0, double y = 0)
 	{
 		position.x = x;
@@ -67,7 +69,7 @@ public:
 		return sqrt(dx * dx + dy * dy);
 	}
 
-	bool is_pixel_visible(double x, double y)
+	virtual bool is_pixel_visible(double x, double y)
 	{
 		if (!is_visible)return false;
 
@@ -78,7 +80,9 @@ public:
 		double dy2 = sin(rotation) * dx + cos(rotation) * dy;
 
 		if (abs(dx2) > width / 2)return false;
-		if (abs(dy2) > length / 2)return false;
+		if (abs(dy2) > height / 2)return false;
 		return true;
 	}
+
+	virtual char get_pixel_type(double x, double y) { return '*'; }
 };

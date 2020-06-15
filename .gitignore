@@ -32,3 +32,5 @@
 *.app
 /src/.vs/projekt-wit/v16
 /src/Debug
+/.vs/projekt-wit/v16
+/x64/Debug
