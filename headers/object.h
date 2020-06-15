@@ -24,11 +24,11 @@ struct Vec
 class Object
 {
 protected:
-	Vec position;
-	double velocity_x;
-	double velocity_y;
-	double force_x;
-	double force_y;
+	Vec position = Vec();
+	double velocity_x = 0;
+	double velocity_y = 0;
+	double force_x = 0;
+	double force_y = 0;
 
 public:
 	double rotation = 0;
@@ -85,4 +85,6 @@ public:
 	}
 
 	virtual char get_pixel_type(double x, double y) { return '*'; }
+
+	virtual int get_pixel_color(double x, double y) { return 0x0008; }
 };
