@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="library\ai_car.cpp" />
     <ClCompile Include="library\camera.cpp" />
     <ClCompile Include="library\car.cpp" />
     <ClCompile Include="library\display.cpp" />
@@ -29,6 +30,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="headers\ai_car.h" />
     <ClInclude Include="headers\camera.h" />
     <ClInclude Include="headers\car.h" />
     <ClInclude Include="headers\display.h" />

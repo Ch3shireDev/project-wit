@@ -23,6 +23,9 @@
     <ClCompile Include="library\display.cpp">
       <Filter>core\display</Filter>
     </ClCompile>
+    <ClCompile Include="library\ai_car.cpp">
+      <Filter>objects\ai_car</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\display.h">
@@ -45,6 +48,9 @@
     </ClInclude>
     <ClInclude Include="headers\update.h">
       <Filter>core\update</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\ai_car.h">
+      <Filter>objects\ai_car</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +80,9 @@
     </Filter>
     <Filter Include="objects\camera">
       <UniqueIdentifier>{ef8121f8-674a-459b-a227-ef5b873bc6ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="objects\ai_car">
+      <UniqueIdentifier>{2ac906fd-f7af-4651-b07c-dba9e713afe8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

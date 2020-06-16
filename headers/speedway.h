@@ -13,4 +13,6 @@ public:
 	char get_pixel_type(double x, double y) override;
 
 	Speedway(double x, double y, double r1, double dr2);
+
+	int is_on_track(Vec position);
 };

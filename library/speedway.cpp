@@ -34,3 +34,12 @@ Speedway::Speedway(double x0, double y0, double r1, double dr2): Object(0, 0)
 	this->r1 = r1;
 	this->r2 = r1 + dr2;
 }
+
+int Speedway::is_on_track(Vec position)
+{
+	double R = get_r(position.x, position.y);
+	double dr = 2;
+	if (R > r1 + dr && R < r2 - dr)return 2;
+	if (R > r1 && R < r2)return 1;
+	return 0;
+}

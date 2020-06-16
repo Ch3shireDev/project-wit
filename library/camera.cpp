@@ -10,12 +10,12 @@ void Camera::update(double dt)
 
 	if (abs(dx) > camera_margin)
 	{
-		position.x += dx / 5;
+		position.x += dx / 3;
 	}
 
 	if (abs(dy) > camera_margin)
 	{
-		position.y += dy / 5;
+		position.y += dy / 3;
 	}
 }
 

@@ -1,3 +1,4 @@
+#include "ai_car.h"
 #include "display.h"
 #include "input.h"
 #include "update.h"
@@ -9,11 +10,12 @@
 
 int main()
 {
-	Object* car = new Car(10, 0);
-
+	auto* speedway = new Speedway(-1000, 0, 1000, 30);
+	Car* car = new Car(6, 0);
+	AiCar* ai_car = new AiCar(24, 0);
+	car->set_speedway(speedway);
+	car->set_collider(ai_car);
 	auto* camera = new Camera(car, 10);
-	auto* speedway = new Speedway(-150, 0, 150, 20);
-
 	while (true)
 	{
 		update();
