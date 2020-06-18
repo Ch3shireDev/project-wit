@@ -3,10 +3,28 @@
 #include <cmath>
 
 class Object;
+
+/// <summary>
+/// Rejestrowanie obiektu na liście obiektów do wyświetlania.
+/// </summary>
+/// <param name="object"></param>
 void register_object(Object* object);
+
+/// <summary>
+/// Wyrejestrowanie obiektu z listy obiektów do wyświetlania.
+/// </summary>
+/// <param name="object"></param>
 void unregister_object(Object* object);
+
+/// <summary>
+/// Zwraca listę wszystkich zarejestrowanych obiektów.
+/// </summary>
+/// <returns></returns>
 std::vector<Object*>& get_all_objects();
 
+/// <summary>
+/// Struktura pomocnicza wektora - zawiera współrzędne x,y.
+/// </summary>
 struct Vec
 {
 	double x = 0;
@@ -21,6 +39,9 @@ struct Vec
 	}
 };
 
+/// <summary>
+/// Klasa bazowa wszystkich elementów gry.
+/// </summary>
 class Object
 {
 protected:

@@ -1,21 +1,26 @@
 #include "ai_car.h"
+#include "game.h"
 
-double t = 0;
-
-void AiCar::update(double dt) 
+void AiCar::update(double dt)
 {
-	t += dt;
+
+	if (!is_active)return;
+
+	if (position.x < -50 && position.y < -50) { allow_defeat = true; }
+	if(allow_defeat && position.y < -40 && position.y>-50)
+	{
+		set_defeat();
+	}
 	
-	double R = 1020;
-	double x0 = -R+18;
-	double y0 = 0;
-	double T = 10.5;
+	t += dt;
 
-	double t2 = t - 3;
-	if (t2 < 0)t2 = 0;
+	double x0 = -R + init_x;
+	double y0 = init_y;
+	//T -= 0.001 * dt;
+	double t2 = t;
 
-	double x = x0+ R* cos(t2 / T);
-	double y = y0+ R* sin(t2 / T);
+	double x = x0 + R * cos(t2 / T);
+	double y = y0 + R * sin(t2 / T);
 
 	this->position.x = x;
 	this->position.y = y;

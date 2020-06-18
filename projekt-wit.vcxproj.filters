@@ -26,6 +26,12 @@
     <ClCompile Include="library\ai_car.cpp">
       <Filter>objects\ai_car</Filter>
     </ClCompile>
+    <ClCompile Include="library\finish.cpp">
+      <Filter>objects\finish</Filter>
+    </ClCompile>
+    <ClCompile Include="library\game.cpp">
+      <Filter>core\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\display.h">
@@ -51,6 +57,12 @@
     </ClInclude>
     <ClInclude Include="headers\ai_car.h">
       <Filter>objects\ai_car</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\finish.h">
+      <Filter>objects\finish</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\game.h">
+      <Filter>core\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +95,12 @@
     </Filter>
     <Filter Include="objects\ai_car">
       <UniqueIdentifier>{2ac906fd-f7af-4651-b07c-dba9e713afe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="objects\finish">
+      <UniqueIdentifier>{50a7a734-3aff-4d2a-af39-948afbaedcda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\game">
+      <UniqueIdentifier>{f8614438-6f21-422e-b1c9-1b963915644c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

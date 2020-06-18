@@ -2,6 +2,10 @@
 
 #include <cmath>
 
+/// <summary>
+/// Kamera śledzi podany obiekt.
+/// </summary>
+/// <param name="dt"></param>
 void Camera::update(double dt)
 {
 	Vec pos = object->get_position();

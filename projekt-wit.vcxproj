@@ -23,6 +23,8 @@
     <ClCompile Include="library\camera.cpp" />
     <ClCompile Include="library\car.cpp" />
     <ClCompile Include="library\display.cpp" />
+    <ClCompile Include="library\finish.cpp" />
+    <ClCompile Include="library\game.cpp" />
     <ClCompile Include="library\input.cpp" />
     <ClCompile Include="library\object.cpp" />
     <ClCompile Include="library\speedway.cpp" />
@@ -34,6 +36,8 @@
     <ClInclude Include="headers\camera.h" />
     <ClInclude Include="headers\car.h" />
     <ClInclude Include="headers\display.h" />
+    <ClInclude Include="headers\finish.h" />
+    <ClInclude Include="headers\game.h" />
     <ClInclude Include="headers\input.h" />
     <ClInclude Include="headers\object.h" />
     <ClInclude Include="headers\speedway.h" />

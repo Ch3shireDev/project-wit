@@ -1,6 +1,9 @@
 #pragma once
 #include "object.h"
 
+/// <summary>
+/// Klasa toru wyścigowego.
+/// </summary>
 class Speedway : public Object
 {
 	double get_r2(double x, double y);
@@ -14,5 +17,10 @@ public:
 
 	Speedway(double x, double y, double r1, double dr2);
 
+	/// <summary>
+	/// Pozwala na sprawdzenie czy dana pozycja należy do toru.
+	/// </summary>
+	/// <param name="position"></param>
+	/// <returns></returns>
 	int is_on_track(Vec position);
 };

@@ -1,12 +1,13 @@
 #include "update.h"
 #include "object.h"
 
-#include <ctime>
-#include <iostream>
 #include <chrono>
 using namespace std::chrono;
 
-
+/// <summary>
+/// Skrótowiec zwracający aktualną liczbę milisekund.
+/// </summary>
+/// <returns></returns>
 int64_t get_time()
 {
 	return std::chrono::duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
@@ -14,6 +15,9 @@ int64_t get_time()
 
 int64_t t0 = get_time();
 
+/// <summary>
+/// Aktualizuje stan gry. Funkcja przebiega po wszystkich zerejestrowanych obiektach i kolejno wywołuje ich metody update.
+/// </summary>
 void update()
 {
 	int64_t t1 = get_time();

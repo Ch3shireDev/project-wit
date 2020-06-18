@@ -5,11 +5,20 @@
 
 unsigned int key_bytes;
 
+/// <summary>
+/// Funkcja zwraca informację o stanie przyciśniecia podanego klawisza.
+/// </summary>
+/// <param name="key"></param>
+/// <returns></returns>
 bool get_input(InputEnum key)
 {
+	// Użyłem tu czarnej magii z przesunieciami bitowymi której tak naprawdę nie rozumiem.
 	return (key_bytes >> (static_cast<int>(key) - 1)) & 0x1;
 }
 
+/// <summary>
+/// Funkcja sprawdza które klawisze są przyciśnięte i zapamiętuje je w zmiennej.
+/// </summary>
 void input()
 {
 	key_bytes = 0;
